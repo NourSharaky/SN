@@ -1,0 +1,209 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+body{
+  background-color: #5d737e;
+  font-size: 30px;
+  font-family: "Avenir Next LT Pro", cursive;
+}
+.navigationBar{
+  background-color: #5d737e;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+nav ul{
+  list-style: none;
+  margin: 0;
+  padding:0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #EE5656;
+}
+nav ul li{
+  float: left;
+  width: 25%;
+  padding: 0 calc(25%/6);
+}
+nav ul li a {
+  display: inline-block;
+  text-align: center;
+  padding:16px;
+  width:100% ;
+  text-decoration: none;
+  color:white;
+  font-size:20px;
+  transition: background-color 200ms ease-in-out, color 200ms ease-in-out ;
+  /* text-transform: uppercase */
+}
+li a:hover{
+    background-color:#F9F7F3;
+    color: #5D737E;
+}
+.dropDownIcon{
+  /* to not view the drop-down icon while in full display */
+  display: none;
+}
+.btn{
+  background-color: #ee5656;
+  border-radius: 5px;
+  width: 50px;
+  height: 50px;
+  font-size: 40px;
+  text-align: center;
+  margin: 10px;
+  cursor: pointer;
+  color: white;
+  border: 0px;
+}
+.btn:hover{
+  background: #251605;
+}
+.title{
+  text-decoration: #ee5656;
+  text-decoration-line: underline ;
+  text-decoration-style: wavy ;
+  font-size: 40px;
+  font-family: cursive;
+  color:#f9f7f3;
+}
+.newNoteWindow{
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  min-height: 100vh;
+  }
+.noteWindow{
+  position: sticky;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  margin-top: 7%;
+}
+.logos{
+  display: flex;
+  justify-content: flex-end;
+}
+
+#check-icon, #x-icon{
+  color: grey;
+  cursor: pointer;
+}
+#check-icon{
+  position: absolute;
+  padding: 10px;
+  padding-right: 45px;
+}
+#x-icon{
+  position: absolute;
+  padding: 10px
+}
+#drag-icon{
+  color: grey;
+  cursor: move;
+}
+textarea{
+  box-shadow: 10px 10px 24px 0px rgba(0,0,0,0.75);
+  outline: none;
+  border: none;
+  width: 275px;
+  height: 275px;
+  padding: 25px;
+  padding-top: 45px;
+  border-radius: 20px;
+  font-size: 1.1rem
+}
+.addedNotes{
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  flex-direction: row;
+  margin-top: 30px;
+  margin-left: 2%;
+  width:auto;
+}
+.note{
+  width:250px ;
+  height: 250px;
+  font-size:20px ;
+  padding: 25px ;
+  margin-top: 10px;
+  overflow:hidden;
+  box-shadow: 0px 10px 25px 0px rgba(0,0,0,0.75);
+  border-radius: 20px;
+  color: black;
+}
+.note.over {
+  border: 4px dashed #666;
+}
+.text{
+  outline: none;
+  border-radius: inherit;
+  background-color: inherit;
+  font-size: 20px;
+}
+
+@media screen and (max-width:500px){
+  ul{
+    /* change direction of flex from row to column */
+    flex-direction: column;
+  }
+  nav ul li{
+    /* for the hover effect (block) to take the whole width of the screen */
+    width: 100%;
+    /* remove the extra paddings */
+    padding: 0;
+  }
+  .dropDownIcon{
+    /* to show the hidden drop down menu icon */
+    display: block;
+    width: 10%;
+    /* align the icon to the left */
+    margin-left: 85%;
+  }
+  .down {
+    color: white
+  }
+  /* (this applies to all list items except the first child) */
+  nav ul li:not(:nth-child(1)) a{
+    /* align list items to the left and give padding from the left only */
+    text-align: left;
+    padding-left: 20px;
+    /* to avoid oveflowing padding, width or margin */
+    box-sizing: border-box;
+    border: 0.5px solid white;
+  }
+  .btn{
+    width: 40px;
+    height: 40px;
+    font-size: 30px
+  }
+  span{
+    font-size: 30px;
+  }
+  .noteWindow{
+    margin-top: 15%
+  }
+  .displayNone{
+    display: none;
+  }
+  .displayBlock{
+    display: block;
+  }
+  .addedNotes{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .note{
+    margin-top: 10px;
+  }
+
+}
